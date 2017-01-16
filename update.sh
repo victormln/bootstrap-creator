@@ -41,7 +41,7 @@ then
   then
     tieneUltimaVersion=false
     # Conseguimos la ultima version que hay en github y le quitamos los puntos
-    ultimaVersion=$(curl -s https://raw.githubusercontent.com/victormln/easy-push/master/terminal/user.conf | tail -1 | cut -d'=' -f 2) > /dev/null
+    ultimaVersion=$(curl -s https://raw.githubusercontent.com/victormln/bootstrap-creator/master/user.conf | tail -1 | cut -d'=' -f 2) > /dev/null
     ultimaVersionSinPuntos=$( echo $ultimaVersion | tr -d ".")
     # Miramos que versión tiene el usuario actualmente
     versionActualSinPuntos=$(cat $( dirname "${BASH_SOURCE[0]}" )/user.conf | tail -1 | cut -d'=' -f 2 | tr -d ".")

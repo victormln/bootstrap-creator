@@ -37,3 +37,24 @@ chmod +x $( dirname "${BASH_SOURCE[0]}" )/update.sh
 # Comprobaré si hay alguna versión nueva del programa autopush
 # y lo mostraré en pantalla
 source $( dirname "${BASH_SOURCE[0]}" )/update.sh
+
+directorio_actual=$(pwd)
+
+# Hacer con array associativo
+function parseOption {
+  if [ -z $1 ]
+  then
+    copyBootstrap
+  else
+    if [ "$1" == "--title" ]
+    then
+
+    elif [ "$1" == "--cdn" ]
+    then
+
+    elif [ "$1" == "--" ]
+    then
+
+    fi
+  fi
+}
