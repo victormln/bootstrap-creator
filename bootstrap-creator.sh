@@ -28,7 +28,6 @@ OK='\033[0;32m'
 WARNING='\033[1;33m'
 NC='\033[0m'
 
-
 # Cogemos los datos del archivo .conf
 source $( dirname "${BASH_SOURCE[0]}" )/user.conf
 
