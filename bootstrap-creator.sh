@@ -75,14 +75,14 @@ function parseOption {
       cp $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/template.html $1/index.html
       fillTemplate $1
       copyDate $1
-      if $text_editor $1 &> /dev/null
+      if command -v $text_editor $1 >/dev/null 2>&1
       then
-        $text_editor $1
+        $text_editor $1 &
       else
         echo -e "${ERROR}[ERROR] ${NC}Por favor, ponga un editor que suela usar en el archivo user.conf."
         echo "Por ejemplo: text_editor=atom"
         echo "Se va a abrir por defecto el index.html creado con gedit"
-        gedit $1/index.html
+        gedit $1/index.html &
       fi
     fi
   fi
