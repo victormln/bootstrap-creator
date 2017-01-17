@@ -72,7 +72,7 @@ function parseOption {
       parseTitle $2 $3
       mkdir -p $1
       touch $1/index.html
-      cp bootstrap-files/template.html $1/index.html
+      cp $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/template.html $1/index.html
       fillTemplate $1
       copyDate $1
     fi
@@ -82,10 +82,10 @@ function parseOption {
 function fillTemplate {
   if $cdn
   then
-    sed "/<\/title>/ r bootstrap-files/header_cdn.html" $1/index.html > $1/tmp.html
+    sed "/<\/title>/ r $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/header_cdn.html" $1/index.html > $1/tmp.html
     mv $1/tmp.html $1/index.html
   else
-    sed "/<\/title>/ r bootstrap-files/header_local.html" $1/index.html > $1/tmp.html
+    sed "/<\/title>/ r $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/header_local.html" $1/index.html > $1/tmp.html
     mv $1/tmp.html $1/index.html
   fi
   #
@@ -98,7 +98,7 @@ function fillTemplate {
 }
 
 function copyDate {
-  cp -R bootstrap-files/$version_bootstrap/* $1
+  cp -R $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/$version_bootstrap/* $1
 }
 
 # Dados dos argumentos --title y "Nombre del <title>"
