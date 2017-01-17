@@ -82,14 +82,13 @@ function parseOption {
 function fillTemplate {
   if $cdn
   then
-    echo "1"
-    sed -n "/<\/title>/r bootstrap-files/header_cdn.html" $1/index.html
+    sed "/<\/title>/ r bootstrap-files/header_cdn.html" $1/index.html > $1/tmp.html
+    mv $1/tmp.html $1/index.html
   else
-    echo "12"
-    sed -n "/<\/title>/r bootstrap-files/header_local.html" $1/index.html
+    sed "/<\/title>/ r bootstrap-files/header_local.html" $1/index.html > $1/tmp.html
+    mv $1/tmp.html $1/index.html
   fi
   #
-  echo "Titulo: $title"
   if [ -z $title ]
   then
     sed -i 's/<titulo>//g'  $1/index.html
@@ -120,13 +119,16 @@ function parseTitle {
 }
 
 function cdn {
-  if [ "$1" == "--cdn"]
-  then
-    cdn=true
-  fi
+  for var in "$@"
+  do
+    if [ "$var" == "--cdn" ]
+    then
+      cdn=true
+    fi
+  done
 }
 IFS=''
 directorio_actual=$(pwd)
-cdn=false
 title=""
-parseOption $1 $2 $3 $4
+cdn $*
+parseOption $*

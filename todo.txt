@@ -1,2 +1,0 @@
-- Pasar por parametro la ruta del directorio
-- Si no pasa nada, se crea en .
