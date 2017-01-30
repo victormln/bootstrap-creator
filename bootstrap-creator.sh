@@ -56,6 +56,9 @@ function showHelp {
   echo -e "\tSi pones este parámetro, en vez de los archivos locales de css y js, tendrás un enlace a los archivos en CDN"
   echo -e "\tSi no pones este parámetro, se te pondrán los archivos de bootstrap localmente."
 
+  echo -e "\n${CYAN}[-file]${NC}"
+  echo -e "\tSi pones este parámetro te creará en el directorio actual, un archivo con el nombre que le pases"
+
 }
 
 # Hacer con array associativo
@@ -68,12 +71,17 @@ function parseOption {
     if [ "$1" == "--help" ]
     then
       showHelp
+    elif [ "$1" == "-file" ]
+    then
+      createFile $2
+      echo -e "${OK}[OK] ${NC}Se ha creado el archivo $2 correctamente."
     else
+      fileName="index"
       parseTitle $2 $3
       mkdir -p $1
-      touch $1/index.html
-      cp $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/template.html $1/index.html
-      fillTemplate $1
+      touch $1/$filename.html
+      cp $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/template.html $1/$fileName.html
+      fillTemplate $1 $fileName
       copyDate $1
       echo -e "${OK}[OK] ${NC}Se ha creado tu proyecto $1 correctamente."
       if $open_editor
@@ -85,10 +93,21 @@ function parseOption {
           echo -e "${ERROR}[ERROR] ${NC}Por favor, ponga un editor que suela usar en el archivo user.conf."
           echo "Por ejemplo: text_editor=atom"
           echo "Se va a abrir por defecto el index.html creado con gedit"
-          gedit $1/index.html &
+          gedit $1/$fileName.html &
         fi
       fi
     fi
+  fi
+}
+
+function createFile {
+  cp $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/template_with_css_js.html $1
+  #
+  if [ -z $title ]
+  then
+    sed -i 's/<titulo>//g'  $1
+  else
+    sed -i "s/<titulo>/$title/g" $1
   fi
 }
 
@@ -96,17 +115,17 @@ function fillTemplate {
   if $cdn
   then
     sed "/<\/title>/ r $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/header_cdn.html" $1/index.html > $1/tmp.html
-    mv $1/tmp.html $1/index.html
+    mv $1/tmp.html $1/$2.html
   else
     sed "/<\/title>/ r $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/header_local.html" $1/index.html > $1/tmp.html
-    mv $1/tmp.html $1/index.html
+    mv $1/tmp.html $1/$2.html
   fi
   #
   if [ -z $title ]
   then
-    sed -i 's/<titulo>//g'  $1/index.html
+    sed -i 's/<titulo>//g'  $1/$2.html
   else
-    sed -i "s/<titulo>/$title/g" $1/index.html
+    sed -i "s/<titulo>/$title/g" $1/$2.html
   fi
 }
 
