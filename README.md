@@ -36,7 +36,7 @@ Todos los argumentos disponibles:
 |Argumento           |Abreviado|Significado                                   |Uso|
 | ------------- | ---- | ---------------------------------------- |----------|
 |`nombreProyecto/testing`       |     | Se creará la carpeta nombreProyecto y dentro la carpeta testing que contiene un .html y los archivos bootstrap (css y js)        |`strap nombreProyecto/testing`  |
-|`-file`     |  | Creará tan solo un archivo con los links a los css y js de Bootstrap (no creará ni una carpeta, ni te pondrá los archivos css/js).  |`strap -f test.html`      |
+|`-file`     |  | Creará tan solo un archivo con los links a los css y js de Bootstrap (no creará ni una carpeta, ni te pondrá los archivos css/js).  |`strap -file test.html`      |
 |`--conf`     |  | Abre/edita el archivo de configuración del script  |`strap --conf`      |
 |`--cdn`     |  | Busca actualizaciones disponibles.  |`gp proyecto --cdn`      |
 |`--title`     |  | Usará los links a los css y js de CDN.  |`strap proyecto --title "Hola mundo"`      |

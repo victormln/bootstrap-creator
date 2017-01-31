@@ -88,9 +88,17 @@ function parseOption {
       exit 0
     else
       fileName="index"
-      parseTitle $2 $3
+      if [ "$2" == "--title" ]
+      then
+        parseTitle $2 $3
+      elif [ "$1" == "--title" ]
+      then
+        parseTitle $1 $2
+      elif [ "$3" == "--title" ]
+      then
+        parseTitle $3 $4
+      fi
       mkdir -p $1
-      touch $1/$filename.html
       cp $( dirname "${BASH_SOURCE[0]}" )/bootstrap-files/template.html $1/$fileName.html
       fillTemplate $1 $fileName
       copyDate $1
