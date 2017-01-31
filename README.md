@@ -22,7 +22,7 @@ cd bootstrap-creator
 
 Se pueden configurar varios parámetros. Por ejemplo que no busque actualizaciones automáticas, modificar el editor con el que se abrirá tu proyecto creado y otras configuraciones. Si se abre el archivo **user.conf** se podrán acceder a todas las configuraciones.
 
-## Uso
+## Uso / Ejemplos
 
 Este script se puede ejecutar de varias maneras, una de ellas (la más simple):
 ```shell
@@ -31,15 +31,19 @@ strap proyecto/test
 
 Esto te creará en el directorio actual, una carpeta llamada proyecto y dentro otra llamada test.
 
-La estructura de archivos que te quedaria sería una así:
+La estructura de archivos que te quedaría sería una así:
 
 ![alt tag](https://s29.postimg.org/ac9ua0qbr/directorios.png)
 
-Por ejemplo si quiero crear el proyecto Testing con el titulo del index.html "Hola mundo" y que tenga los links de css y js de CDN, haré:
+Otro ejemplo: si quiero crear el proyecto Testing con el titulo del index.html "Hola mundo" y que tenga los links de css y js de CDN, haré:
 
 ```shell
 strap Testing --title "Hola mundo" --cdn
 ```
+
+Y el encabezado del index.html quedaría así:
+
+![alt tag](https://s27.postimg.org/a6yezywpf/head.png)
 
 Todos los argumentos disponibles:
 
