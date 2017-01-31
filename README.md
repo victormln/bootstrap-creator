@@ -35,10 +35,10 @@ Todos los argumentos disponibles:
 
 |Argumento           |Abreviado|Significado                                   |Uso|
 | ------------- | ---- | ---------------------------------------- |----------|
-|`--help`     | -h | Abre/edita el archivo de configuración del script  |`strap --help`      |
 |`proyecto`       |     | Se creará la carpeta proyecto y dentro un .html y los archivos bootstrap necesarios        |`strap proyecto/testing`  |
 |`-file`     |  | Creará tan solo un archivo con los links a los css y js de Bootstrap (no creará ni una carpeta, ni te pondrá los archivos css/js).  |`strap -f test.html`      |
 |`--conf`     |  | Abre/edita el archivo de configuración del script  |`strap --conf`      |
 |`--cdn`     |  | Busca actualizaciones disponibles.  |`gp proyecto --cdn`      |
 |`--title`     |  | Usará los links a los css y js de CDN.  |`strap proyecto --title "Hola mundo"`      |
 |     |`-v`  | Muestra la versión instalada del script.  |`gp -v`      |
+|`--help`     | `-h` | Abre/edita el archivo de configuración del script  |`strap --help`      |
