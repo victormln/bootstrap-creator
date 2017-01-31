@@ -5,7 +5,7 @@ También podemos crear simplemente un .html con una plantilla básica de bootstr
 
 Ejemplo para ejecutar el script
 ```shell
-strap
+strap proyecto/test --title "Hola mundo"
 ```
 
 ## Instalación
