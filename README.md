@@ -24,12 +24,22 @@ Se pueden configurar varios parámetros. Por ejemplo que no busque actualizacion
 
 ## Uso
 
-Este script se puede ejecutar de varias maneras, una de ellas (y la más simple):
+Este script se puede ejecutar de varias maneras, una de ellas (la más simple):
 ```shell
 strap proyecto/test
 ```
 
 Esto te creará en el directorio actual, una carpeta llamada proyecto y dentro otra llamada test.
+
+La estructura de archivos que te quedaria sería una así:
+
+![alt tag](https://s29.postimg.org/inbva66nr/directorios.png)
+
+Por ejemplo si quiero crear el proyecto Testing con el titulo del index.html "Hola mundo" y que tenga los links de css y js de CDN, haré:
+
+```shell
+strap Testing --title "Hola mundo" --cdn
+```
 
 Todos los argumentos disponibles:
 
