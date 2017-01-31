@@ -45,7 +45,7 @@ Y el encabezado del index.html quedaría así:
 
 ![alt tag](https://s27.postimg.org/a6yezywpf/head.png)
 
-Todos los argumentos disponibles:
+## Todos los argumentos disponibles
 
 |Argumento           |Abreviado|Significado                                   |Uso|
 | ------------- | ---- | ---------------------------------------- |----------|
