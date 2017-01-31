@@ -31,6 +31,9 @@ PURPLE='\033[0;35m'
 ORANGE='\033[0;33m'
 CYAN='\033[0;36m'
 
+CURRENTVERSION=$(grep '# Versión:' $0 | cut -d: -f 2 | head -1)
+CURRENTVERSION=${CURRENTVERSION//[[:blank:]]/}
+
 # Cogemos los datos del archivo .conf
 source $( dirname "${BASH_SOURCE[0]}" )/user.conf
 
@@ -68,13 +71,21 @@ function parseOption {
     echo -e "${ERROR}[ERROR] ${NC}Por favor, mínimo tiene que poner un parámetro."
     echo "Puedes ver la ayuda del scrip con --help"
   else
-    if [ "$1" == "--help" ]
+    if [ "$1" == "--help" ] || [ "$1" == "-h" ]
     then
       showHelp
     elif [ "$1" == "-file" ]
     then
       createFile $2
       echo -e "${OK}[OK] ${NC}Se ha creado el archivo $2 correctamente."
+    elif [ "$1" == "-v" ]
+    then
+        echo $CURRENTVERSION
+    elif [ "$1" == "--conf" ]
+    then
+      echo -e "Abriendo archivo de configuración."
+      $default_editor $( dirname "${BASH_SOURCE[0]}" )/user.conf
+      exit 0
     else
       fileName="index"
       parseTitle $2 $3
