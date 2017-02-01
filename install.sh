@@ -12,5 +12,5 @@ actualDir=$(pwd)
 chmod +x bootstrap-creator.sh
 echo "alias strap=\"$actualDir/bootstrap-creator.sh\"" >> ~/.bashrc
 echo -e "${OK}[OK]${NC} Instalación finalizada."
-echo "Reinicie este terminal y ejecute ${BLUE}strap -v${NC} para comprobar que se ha instalado correctamente."
+echo -e "Reinicie este terminal y ejecute ${BLUE}strap -v${NC} para comprobar que se ha instalado correctamente."
 exit
