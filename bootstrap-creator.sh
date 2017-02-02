@@ -59,7 +59,7 @@ function showHelp {
   echo -e "\tSi pones este parámetro, en vez de los archivos locales de css y js, tendrás un enlace a los archivos en CDN"
   echo -e "\tSi no pones este parámetro, se te pondrán los archivos de bootstrap localmente."
 
-  echo -e "\n${CYAN}[-file]${NC}"
+  echo -e "\n${CYAN}[-file] || [-f]${NC}"
   echo -e "\tSi pones este parámetro te creará en el directorio actual, un archivo con el nombre que le pases"
 
 }
@@ -74,7 +74,7 @@ function parseOption {
     if [ "$1" == "--help" ] || [ "$1" == "-h" ]
     then
       showHelp
-    elif [ "$1" == "-file" ]
+    elif [ "$1" == "-file" ] || [ "$1" == "-f"]
     then
       createFile $2
       echo -e "${OK}[OK] ${NC}Se ha creado el archivo $2 correctamente."
