@@ -2,7 +2,7 @@
 # Fitxer: bootstrap-creator.sh
 # Autor: Víctor Molina Ferreira (victor)
 # Data: 17/01/2017
-# Versión: 1.0
+# Versión: 1.1
 
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -74,7 +74,7 @@ function parseOption {
     if [ "$1" == "--help" ] || [ "$1" == "-h" ]
     then
       showHelp
-    elif [ "$1" == "-file" ] || [ "$1" == "-f"]
+    elif [ "$1" == "-file" ] || [ "$1" == "-f" ]
     then
       createFile $2
       echo -e "${OK}[OK] ${NC}Se ha creado el archivo $2 correctamente."
