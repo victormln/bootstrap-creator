@@ -47,7 +47,7 @@ then
   	# Mostramos el mensaje de que hay una nueva actualización
   	echo "###########################################"
   	echo -e "${WARNING}¡NUEVA ACTUALIZACIÓN!${NC}"
-  	echo "Tienes la versión: $version"
+  	echo "Tienes la versión: $CURRENTVERSION"
   	echo "Versión disponible: $ultimaVersion"
   	echo "###########################################"
   	# Si tiene las actualizaciones automaticas, no se le pide nada

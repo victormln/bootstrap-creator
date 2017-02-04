@@ -59,7 +59,7 @@ function showHelp {
   echo -e "\tSi pones este parámetro, en vez de los archivos locales de css y js, tendrás un enlace a los archivos en CDN"
   echo -e "\tSi no pones este parámetro, se te pondrán los archivos de bootstrap localmente."
 
-  echo -e "\n${CYAN}[-file] || [-f]${NC}"
+  echo -e "\n${CYAN}[-file] [-f]${NC}"
   echo -e "\tSi pones este parámetro te creará en el directorio actual, un archivo con el nombre que le pases"
 
 }
