@@ -55,6 +55,7 @@ then
   	then
   		# Si es así, hacemos un pull y le actualizamos el script
   		echo "Hay una nueva actualización y tienes activadas las descargas automáticas."
+      git stash > /dev/null
   		git pull | tee >(echo "Actualizando... Por favor, espere ...")
   		echo -e "${OK}[OK] ${NC}La actualización ha acabado, por favor, vuelva a iniciar el script.";
   	else
@@ -67,6 +68,7 @@ then
   			directorioActual=$(pwd)
   			cd "$( dirname "${BASH_SOURCE[0]}" )"
   			cd ..
+        git stash > /dev/null
   	    # Si es así, hacemos un pull y le actualizamos el script
   	  	git pull | tee >(echo "Actualizando... Por favor, espere ...")
         # Iniciamos de nuevo el script para ejecutar el script actualizado
