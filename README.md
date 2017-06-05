@@ -52,7 +52,7 @@ Y el encabezado del index.html quedaría así:
 |`nombreProyecto/testing`       |     | Se creará la carpeta nombreProyecto y dentro la carpeta testing que contiene un .html y los archivos bootstrap (css y js)        |`strap nombreProyecto/testing`  |
 |`-file`     |  | Creará tan solo un archivo con los links a los css y js de Bootstrap (no creará ni una carpeta, ni te pondrá los archivos css/js).  |`strap -file test.html`      |
 |`--conf`     |  | Abre/edita el archivo de configuración del script  |`strap --conf`      |
-|`--cdn`     |  | Busca actualizaciones disponibles.  |`gp proyecto --cdn`      |
-|`--title`     |  | Usará los links a los css y js de CDN.  |`strap proyecto --title "Hola mundo"`      |
+|`--cdn`     |  | Usará los links a los css y js de CDN.  |`gp proyecto --cdn`      |
+|`--title`     |  | Puedes escoger que título tendrá tu página (lo que irá dentro del tag html <title>.  |`strap proyecto --title "Hola mundo"`      |
 |     |`-v`  | Muestra la versión instalada del script.  |`gp -v`      |
-|`--help`     | `-h` | Abre/edita el archivo de configuración del script  |`strap --help`      |
+|`--help`     | `-h` | Muestra que comandos puedes ejecutar con el script y una breve descripción de ellos  |`strap --help`      |
